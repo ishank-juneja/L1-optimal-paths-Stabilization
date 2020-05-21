@@ -1,20 +1,40 @@
-import cv2 as cv
+import cv2
 import numpy as np
 
-cap = cv.VideoCapture(0)
 
-while True:
-    # Capture frame-by-frame
-    ret, frame = cap.read()
-    # Our operations on the frame come here
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    # Display the resulting frames
-    cv.imshow('Color', frame)
-    cv.imshow('Grayscale', gray)
-    cv.moveWindow('Color', 0, 0)
-    cv.moveWindow('Grayscale', 700, 0)
-    if cv.waitKey(1) & 0xFF == ord('q'):
-        break
-# When everything done, release the capture
-cap.release()
-cv.destroyAllWindows()
+# File locations, etc. for input data
+def main():
+    # Create a VideoCapture object and read from input file
+    cap = cv2.VideoCapture('0.avi')
+
+    # Check if camera opened successfully
+    if not cap.isOpened():
+        print("Error opening video  file")
+
+    # Read until video is completed
+    while cap.isOpened():
+
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+        if ret:
+            # Display the resulting frame
+            cv2.imshow('Frame', frame)
+
+            # Press Q on keyboard to  exit
+            if cv2.waitKey(25) & 0xFF == ord('q'):
+                break
+
+        # Break the loop
+        else:
+            break
+
+    # When everything done, release
+    # the video capture object
+    cap.release()
+
+    # Closes all the frames
+    cv2.destroyAllWindows()
+    return
+
+if __name__ == '__main__':
+    main()
