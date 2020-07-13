@@ -4,6 +4,7 @@ for instance in /home/ishank/Desktop/Regular/*.avi; do
 	# actually exists or is just a glob	
 	[ -e "$instance" ] || continue
 	# Plot arm functions
+	echo -e $"--------------------------------------------\n"
 	echo -e $"Stabilizing file $instance\n"
 	python3 stabilization_L1_optimal.py -i "$instance"
 done
