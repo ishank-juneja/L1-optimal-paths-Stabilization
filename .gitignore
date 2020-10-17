@@ -3,4 +3,7 @@
 __pycache__
 *.png
 *.zip
-
+*.xml
+*.idea*
+*.iml
+*.xml
