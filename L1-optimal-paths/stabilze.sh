@@ -11,6 +11,7 @@ for unstable_video in /home/ishank/courses_IITB/unstable_video_data_Regular/*.av
         # Plot arm functions
         echo -e $"--------------------------------------------\n"
         echo -e $"Stabilizing file $unstable_video\n"
-        python3 stabilization_L1_optimal.py -i "$unstable_video" -crop-ratio 0.7
+        # python3 stabilization_L1_optimal.py -i "$unstable_video" -crop-ratio 0.7
+        python3 stabilization_L1_optimal.py -i "$unstable_video" -crop-ratio 0.7 --trajPlot
     fi
 done
