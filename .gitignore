@@ -1,7 +1,10 @@
+*.pdf
+*.jpg
 *.avi
 *.mp4
 __pycache__
 *.png
+*.lp
 *.zip
 *.xml
 *.idea*
